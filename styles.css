@@ -1,0 +1,156 @@
+.card{
+    border: none !important;
+    border-radius: 30px !important;
+    align-items: center;
+    justify-content: center;
+    max-height: 450px;
+    max-width: 400px;
+    position: relative;
+}
+.card img{
+    border-radius: 30px !important;
+    height: 220px;
+    width: 200px;
+    margin-top: 50px;
+}
+.card:hover{
+    cursor: pointer;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    z-index: 1;
+}
+.card-body{
+    max-width: 200px;
+    font-size: 13px;
+}
+.card-group{
+    align-items: center;
+}
+.container{
+    border: none !important;
+    margin-left: 120px !important;
+    margin-top: 20px !important;
+}
+.btn{
+    border-radius: 20px !important;
+    padding: 5px 40px !important;
+}
+.brn{
+    border-radius: 70px !important; 
+    font-size: 20px !important; 
+    height: 50px !important; 
+    width:150px !important;
+    font-size: 16px !important;
+    padding: 5px 0px !important;
+}
+.emi{
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height step-end 0.1s;
+    margin-top: -30px;
+}
+.emi-height{
+    max-height: 2000px;
+}
+.fam{
+    position: absolute;
+    top: 260px !important;
+    right: 50px !important;
+    background: #fff;
+    padding: 7px;
+    border-radius: 50%;
+}
+.fam:hover{
+    background: black;
+    color: #fff;
+}
+
+#cart-icon {
+    position: relative;
+    cursor: pointer;
+  }
+#cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+  }
+.dem{
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height step-end 0.1s;
+    margin-top: -30px;
+}
+
+
+/* Base styles for desktop screens */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.card-group .card {
+    width: 18rem;
+    margin: 10px;
+}
+
+.card-group .card img {
+    width: 100%;
+    height: auto;
+}
+
+/* Responsive Design */
+
+/* Large tablets and smaller screens (max-width 992px) */
+@media (max-width: 992px) {
+    /* Adjust product card layout */
+    .card-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card-group .card {
+        width: 45%;  /* Two cards per row */
+        margin: 10px;
+    }
+}
+
+/* Small tablets and large phones (max-width 768px) */
+@media (max-width: 768px) {
+    /* Stack cards in a single column */
+    .card-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-group .card {
+        width: 90%; /* Almost full-width for smaller devices */
+        margin-bottom: 15px;
+    }
+
+    .card-group .card img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Mobile screens (max-width 576px) */
+@media (max-width: 576px) {
+    /* Full-width cards on small screens */
+    .card-group .card {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .card-group .card img {
+        width: 100%;
+        height: auto;
+    }
+}
+

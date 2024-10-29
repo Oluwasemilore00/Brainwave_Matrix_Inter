@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Cart.html">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Kord</title>
+</head>
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg bg-dark border-bottom border-body mb-5 " data-bs-theme="dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img style="width: 50px;"  src="images/logo.jpg" alt="">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-0 ml-5 mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Weekly Deals</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Top brands</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link active dropdown-toggle" aria-current="page" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    All Categories
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Men Clothing</a></li>
+                    <li><a class="dropdown-item" href="#">Women Clothing</a></li>
+                    <li><a class="dropdown-item" href="#">Shoes</a></li>
+                    <li><a class="dropdown-item" href="#">Phones</a></li>
+                    <li><a class="dropdown-item" href="#">Appliances</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Summer sales</a></li>
+                  </ul>
+                </li>
+              </ul>
+            <form class="d-flex  mx-auto " style="width: 500px;" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            </form>
+            <ul class="navbar-nav me-auto ml-0 mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">NRA/NGN</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link active dropdown-toggle" aria-current="page" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-regular fa-user"></i> Sign in/Register
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item btn btn-dark" href="#">Sign in</a></li>
+                    <li><a class="dropdown-item" href="#">My orders</a></li>
+                    <li><a class="dropdown-item" href="#">Payments</a></li>
+                    <li><a class="dropdown-item" href="#">Wishlist</a></li>
+                    <li><a class="dropdown-item" href="#">My coupons</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                  </ul>
+                </li>
+                <li id="cart-icon" class="nav-item">
+                    <a class="nav-link active" aria-current="page" target="_blank" href="Cart.html">Cart <i class="fa-solid fa-cart-shopping"></i> <span class="cart-count" id="cart-count">0</span> </a>
+                  </li>
+              </ul>
+          </div>
+        </div>
+    </nav>
+
+
+    <h2>Your Cart</h2>
+    <div id="cart-items" class="dem"></div>
+    <p><strong>Total: $<span id="total-price">0.00</span></strong></p>
+
+
+    <div class="card-group container mt-5">
+      <div class="card text-center mt-5 " style="width: 18rem;">
+        <img  src="https://ae-pic-a1.aliexpress-media.com/kf/H4bce2c4fe4394d2a9417c49f73b09e70b.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+        <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)" ></i> 
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-dark">See preview</a>
+        </div>
+      </div>
+      <div class="card text-center mt-5" style="width: 18rem;">
+        <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4a36565d76254bfb842b6ecc0704fcbdE.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+        <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 2', 100.00)"></i> 
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-dark">See preview</a>
+        </div>
+      </div>
+      <div class="card text-center mt-5" style="width: 18rem;">
+        <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2abb1c4c42ac4c46a5386ac8ea92e716V.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+        <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-dark">See preview</a>
+        </div>
+      </div>
+      <div class="card text-center mt-5" style="width: 18rem;">
+        <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1b16471a354648fe91dd8e6f3a071fc9W.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+        <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-dark">See preview</a>
+        </div>
+      </div>
+      <div class="card text-center mt-5" style="width: 18rem;">
+        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sc222850ea6ed4177b3c9986c059a609bP.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+        <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-dark">See preview</a>
+        </div>
+      </div>
+      </div>
+
+      <div class="card-group container">
+        <div class="card text-center" style="width: 18rem;">
+          <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd8f7421f130b4b79ae9f64dabaaa9faae.png_480x480.png_.webp" class="card-img-top" alt="...">
+          <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-dark">See preview</a>
+          </div>
+        </div>
+        <div class="card text-center" style="width: 18rem;">
+          <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8910bec0552f4d098139081135ddd3fat.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+          <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-dark">See preview</a>
+          </div>
+        </div>
+        <div class="card text-center" style="width: 18rem;">
+          <img src="https://ae-pic-a1.aliexpress-media.com/kf/S568c902db2cf46fa808dab3fbcb3e737W.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+          <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-dark">See preview</a>
+          </div>
+        </div>
+        <div class="card text-center" style="width: 18rem;">
+          <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd8e940820bc949f2b73e75eee0efed4dR.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+          <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-dark">See preview</a>
+          </div>
+        </div>
+        <div class="card text-center" style="width: 18rem;">
+          <img src="https://ae-pic-a1.aliexpress-media.com/kf/Hdc53845ca1ae4822856832af8368b3aau.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+          <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-dark">See preview</a>
+          </div>
+        </div>
+        </div>
+
+        <div class="card-group container">
+          <div class="card text-center" style="width: 18rem;">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S402049acdc5c4c61aa18de7c6db428e4W.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+            <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-dark">See preview</a>
+            </div>
+          </div>
+          <div class="card text-center" style="width: 18rem;">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8e35f6792cde4025a73cea5a3bb4a403R.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+            <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-dark">See preview</a>
+            </div>
+          </div>
+          <div class="card text-center" style="width: 18rem;">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S65e4f2a7a23845dfa5699a1f7d63f5af9.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+            <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-dark">See preview</a>
+            </div>
+          </div>
+          <div class="card text-center" style="width: 18rem;">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4ef69afc1fad4651857e4c5b89fd8372X.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+            <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-dark">See preview</a>
+            </div>
+          </div>
+          <div class="card text-center" style="width: 18rem;">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S27f702178e534191a9af98c3ba70db7eV.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+            <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-dark">See preview</a>
+            </div>
+          </div>
+          </div>
+
+          <div class="card-group container">
+            <div class="card text-center" style="width: 18rem;">
+              <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1e5d6eae030f47a2a044a66aaa3b5445W.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+              <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-dark">See preview</a>
+              </div>
+            </div>
+            <div class="card text-center" style="width: 18rem;">
+              <img src="https://ae-pic-a1.aliexpress-media.com/kf/Ad38eab3363b34bd8b618fc7df6d1255ds.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+              <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-dark">See preview</a>
+              </div>
+            </div>
+            <div class="card text-center" style="width: 18rem;">
+              <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sfb17027661ad47ed9b60927d62c614a46.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+              <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-dark">See preview</a>
+              </div>
+            </div>
+            <div class="card text-center" style="width: 18rem;">
+              <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sb0424aef09a44f6aa69b5a70399ec050i.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+              <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-dark">See preview</a>
+              </div>
+            </div>
+            <div class="card text-center" style="width: 18rem;">
+              <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd483148dad544c35b7f0d596d5cafebfN.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+              <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-dark">See preview</a>
+              </div>
+            </div>
+            </div>
+
+
+
+
+            <div class="emi">
+              <div class="card-group container mt-5">
+                <div class="card text-center mt-5 " style="width: 18rem;">
+                  <img src="https://ae-pic-a1.aliexpress-media.com/kf/H4bce2c4fe4394d2a9417c49f73b09e70b.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+                  <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-dark">See preview</a>
+                  </div>
+                </div>
+                <div class="card text-center mt-5" style="width: 18rem;">
+                  <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4a36565d76254bfb842b6ecc0704fcbdE.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+                  <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-dark">See preview</a>
+                  </div>
+                </div>
+                <div class="card text-center mt-5" style="width: 18rem;">
+                  <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2abb1c4c42ac4c46a5386ac8ea92e716V.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+                  <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-dark">See preview</a>
+                  </div>
+                </div>
+                <div class="card text-center mt-5" style="width: 18rem;">
+                  <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1b16471a354648fe91dd8e6f3a071fc9W.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+                  <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-dark">See preview</a>
+                  </div>
+                </div>
+                <div class="card text-center mt-5" style="width: 18rem;">
+                  <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sc222850ea6ed4177b3c9986c059a609bP.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+                  <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-dark">See preview</a>
+                  </div>
+                </div>
+                </div>
+          
+                <div class="card-group container">
+                  <div class="card text-center" style="width: 18rem;">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd8f7421f130b4b79ae9f64dabaaa9faae.png_480x480.png_.webp" class="card-img-top" alt="...">
+                    <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-dark">See preview</a>
+                    </div>
+                  </div>
+                  <div class="card text-center" style="width: 18rem;">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8910bec0552f4d098139081135ddd3fat.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+                    <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-dark">See preview</a>
+                    </div>
+                  </div>
+                  <div class="card text-center" style="width: 18rem;">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S568c902db2cf46fa808dab3fbcb3e737W.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+                    <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-dark">See preview</a>
+                    </div>
+                  </div>
+                  <div class="card text-center" style="width: 18rem;">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd8e940820bc949f2b73e75eee0efed4dR.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+                    <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-dark">See preview</a>
+                    </div>
+                  </div>
+                  <div class="card text-center" style="width: 18rem;">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Hdc53845ca1ae4822856832af8368b3aau.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+                    <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-dark">See preview</a>
+                    </div>
+                  </div>
+                  </div>
+          
+                  <div class="card-group container">
+                    <div class="card text-center" style="width: 18rem;">
+                      <img src="https://ae-pic-a1.aliexpress-media.com/kf/S402049acdc5c4c61aa18de7c6db428e4W.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+                      <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-dark">See preview</a>
+                      </div>
+                    </div>
+                    <div class="card text-center" style="width: 18rem;">
+                      <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8e35f6792cde4025a73cea5a3bb4a403R.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+                      <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-dark">See preview</a>
+                      </div>
+                    </div>
+                    <div class="card text-center" style="width: 18rem;">
+                      <img src="https://ae-pic-a1.aliexpress-media.com/kf/S65e4f2a7a23845dfa5699a1f7d63f5af9.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+                      <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-dark">See preview</a>
+                      </div>
+                    </div>
+                    <div class="card text-center" style="width: 18rem;">
+                      <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4ef69afc1fad4651857e4c5b89fd8372X.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+                      <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-dark">See preview</a>
+                      </div>
+                    </div>
+                    <div class="card text-center" style="width: 18rem;">
+                      <img src="https://ae-pic-a1.aliexpress-media.com/kf/S27f702178e534191a9af98c3ba70db7eV.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+                      <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-dark">See preview</a>
+                      </div>
+                    </div>
+                    </div>
+          
+                    <div class="card-group container">
+                      <div class="card text-center" style="width: 18rem;">
+                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1e5d6eae030f47a2a044a66aaa3b5445W.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+                        <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-dark">See preview</a>
+                        </div>
+                      </div>
+                      <div class="card text-center" style="width: 18rem;">
+                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Ad38eab3363b34bd8b618fc7df6d1255ds.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+                        <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-dark">See preview</a>
+                        </div>
+                      </div>
+                      <div class="card text-center" style="width: 18rem;">
+                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sfb17027661ad47ed9b60927d62c614a46.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+                        <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-dark">See preview</a>
+                        </div>
+                      </div>
+                      <div class="card text-center" style="width: 18rem;">
+                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sb0424aef09a44f6aa69b5a70399ec050i.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+                        <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-dark">See preview</a>
+                        </div>
+                      </div>
+                      <div class="card text-center" style="width: 18rem;">
+                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd483148dad544c35b7f0d596d5cafebfN.jpg_480x480.jpg_.webp" class="card-img-top" alt="...">
+                        <i class="fa-solid fam fa-cart-shopping" onclick="addToCart('Product 1', 10.00)"></i> 
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-dark">See preview</a>
+                        </div>
+                      </div>
+                      </div>
+          
+            </div>
+
+
+      <div class="d-grid gap-2 col-2 mx-auto mb-5 mt-5" >
+        <button class="brn btn btn-dark" style="border-radius: 70px; font-size: 20px; height: 50px; width:150px;" type="button" onclick="demiToggle()">View More</button>
+      </div>
+
+
+
+      <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <!-- About Us Section -->
+                <div class="col-md-3 mb-4">
+                    <h5>About Us</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">About Us Overview</a></li>
+                        <li><a href="#" class="text-light">Leadership Team</a></li>
+                        <li><a href="#" class="text-light">Values In Action</a></li>
+                        <li><a href="#" class="text-light">Franchising Info</a></li>
+                        <li><a href="#" class="text-light">Recalls & Alerts</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Services Section -->
+                <div class="col-md-3 mb-4">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Services Overview</a></li>
+                        <li><a href="#" class="text-light">Delivery Partners</a></li>
+                        <li><a href="#" class="text-light">Wi-Fi</a></li>
+                        <li><a href="#" class="text-light">PlayPlaces & Parties</a></li>
+                        <li><a href="#" class="text-light">Mobile Order & Pay</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Community Section -->
+                <div class="col-md-3 mb-4">
+                    <h5>Community</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Community Overview</a></li>
+                        <li><a href="#" class="text-light">Now Serving</a></li>
+                        <li><a href="#" class="text-light">HACER® Scholarships</a></li>
+                        <li><a href="#" class="text-light">Black and Positively Golden</a></li>
+                        <li><a href="#" class="text-light">Community Overview</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Contact Us Section -->
+                <div class="col-md-3 mb-4">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Contact Us Overview</a></li>
+                        <li><a href="#" class="text-light">Gift Card FAQs</a></li>
+                        <li><a href="#" class="text-light">Donations</a></li>
+                        <li><a href="#" class="text-light">Employment</a></li>
+                        <li><a href="#" class="text-light">Customer Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <hr class="bg-light">
+    
+            <!-- Social Media and App Store Badges -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <a href="#"><img src="images/facebook.png" alt="Facebook" class="me-2"></a>
+                    <a href="#"><img src="images/x.png" alt="X" class="me-2"></a>
+                    <a href="#"><img src="images/youtube.png" alt="YouTube" class="me-2"></a>
+                    <a href="#"><img src="images/instagram.png" alt="Instagram" class="me-2"></a>
+                    <a href="#"><img src="images/tumblr.png" alt="Tumblr" class="me-2"></a>
+                    <a href="#"><img src="images/spotify.png" alt="Spotify"></a>
+                </div>
+                <div>
+                    <a href="#"><img src="images/app_store_badge.png" alt="App Store" class="me-2"></a>
+                    <a href="#"><img src="images/google_play_badge.png" alt="Google Play"></a>
+                </div>
+            </div>
+    
+            <!-- Legal Links -->
+            <div class="row text-center text-md-start">
+                <div class="col-md-8">
+                    <p class="mb-0">Privacy (Updated)</p>
+                    <p class="mb-0">California Privacy Notice</p>
+                    <p class="mb-0">Consumer Health Data</p>
+                    <p class="mb-0">Terms & Conditions</p>
+                    <p class="mb-0">© 2017 - 2024 KORD. All Rights Reserved</p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <p class="mb-0">Accessibility</p>
+                    <p class="mb-0">Do Not Sell or Share My Personal Information</p>
+                    <p class="mb-0">Cookie Settings</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    
+
+
+
+
+    <script src="main.js"></script>
+    <script src="https://kit.fontawesome.com/06bb6a41b6.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
